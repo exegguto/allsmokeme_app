@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginBottom="5dp">
+
+    <TextView
+        android:id="@+id/service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_weight="1"
+        android:layout_span="2"
+        android:gravity="left"
+        android:text="Чаша из ананаса"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/button_cart_round_background_gradient"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/quantity"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="0"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/button_cart_round_background_gradient"
+        android:text="+"
+        android:focusable="false"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:gravity="end"
+        android:text="500р"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:ignore="RtlCompat" />
+
+</TableRow>

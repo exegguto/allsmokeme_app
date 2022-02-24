@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_rent"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_rent" />
+
+    <item
+        android:id="@+id/menu_shop"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_shop"/>
+
+    <item
+        android:id="@+id/menu_restaurant"
+        android:icon="@drawable/ic_home_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_restaurant" />
+
+    <item
+        android:id="@+id/menu_mixology"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_mixology" />
+
+    <item
+        android:id="@+id/menu_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/chat"
+        app:showAsAction="ifRoom" />
+
+</menu>

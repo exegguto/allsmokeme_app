@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
+      android:id="@+id/menu_cart"
+      android:orderInCategory="5"
+      android:title="@string/menu_cart"
+      app:actionLayout="@layout/view_custom_action_cart"
+      android:icon="@drawable/ic_cart"
+      android:visible="false"
+      app:showAsAction="always"/>
+
+  <item
+      android:id="@+id/menu_call"
+      android:icon="@android:drawable/sym_call_outgoing"
+      app:showAsAction="ifRoom"
+      android:title="@string/menu_call" />
+
+  <item
+      android:id="@+id/menu_help"
+      android:icon="@drawable/ic_help"
+      android:orderInCategory="5"
+      android:title="@string/help"
+      app:showAsAction="ifRoom" />
+  <!--  https://stackoverflow.com/a/23731290/4068957 -->
+</menu>

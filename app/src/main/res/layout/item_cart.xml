@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/product"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@mipmap/ic_nophoto"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/name_eng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/image"
+        android:layout_alignParentTop="true"
+        android:text="Название англ"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/titleru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/image"
+        android:layout_below="@+id/name_eng"
+        android:text="Название рус"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/composition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/image"
+        android:layout_below="@+id/titleru"
+        android:text="вкусы" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/image"
+        android:layout_below="@+id/composition"
+        android:text="50 гр" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_toEndOf="@+id/image"
+        android:layout_below="@+id/weight"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/button_cart_round_background_gradient"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/button_cart_round_background_gradient"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/image"
+        android:background="?android:attr/listDivider" />
+
+</RelativeLayout>

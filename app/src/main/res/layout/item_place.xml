@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--это для результатов поиска-->
+<TableLayout
+    android:id="@+id/textTable"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow
+        android:paddingHorizontal="10dp">
+        <TextView
+            android:id="@+id/textSitySeach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/edittextstyle"
+            android:layout_weight="1"
+            android:text="" />
+    </TableRow>
+    <TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+    </TableRow>
+</TableLayout>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme"
+    android:fitsSystemWindows="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.example.allsmokeme.user.UserActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:orientation="vertical">
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="2"
+                        android:text="ФИО" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Номер телефона:" />
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="+79833198853" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="e-mail:" />
+                    <TextView
+                        android:id="@+id/userEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="allsmokeme@yandex.ru" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Дата рождения:" />
+                    <TextView
+                        android:id="@+id/userDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="25.08.1988" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Пол:" />
+                    <TextView
+                        android:id="@+id/userHuman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="М" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Бонусы:" />
+                    <TextView
+                        android:id="@+id/userBalls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0 баллов" />
+                </TableRow>
+            </TableLayout>
+<!--            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="-10dp"
+                android:background="?android:attr/listDivider" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorFont"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/userHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:elevation="2dp"
+                    android:padding="10dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Мои заказы"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userBallsHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="История бонусов"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/userAdress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Адреса доставки"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userMixs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Мои миксы"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Мои отзывы"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Мои оценки"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userCarts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Сохраненные карты"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userParametrs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Настройка уведомлений"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/userExit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/chat_edittext"
+                    android:padding="10dp"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Выход"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+<!--        <com.example.allsmokeme.CustomViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </com.example.allsmokeme.CustomViewPager>-->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/cart"
+        android:name="com.example.allsmokeme.cart.CartFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_cart" />
+
+</LinearLayout>-->

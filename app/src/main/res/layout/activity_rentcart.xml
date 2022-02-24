@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme"
+    android:fitsSystemWindows="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.example.allsmokeme.rentcart.RentCartActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+                <TextView
+                    android:id="@+id/onClickCartClear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="18sp"
+                    android:onClick="onClickCartClear"
+                    android:text="Очистить" />
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/krugliye_ugli"
+                android:paddingHorizontal="0dp"
+                android:orientation="vertical"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_span="2"
+                            android:layout_weight="1"
+                            android:text="Ваш заказ:"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/hookah"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_span="4"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="Кальян в сборе на 24 часа"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/hookahPrice"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="500р"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlCompat" />
+                        <Button
+                            android:id="@+id/del"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/button_cart_round_background_gradient"
+                            android:text="X"
+                            android:textColor="@color/white"
+                            android:visibility="invisible"
+                            android:clickable="false"
+                            android:textSize="18sp" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginHorizontal="0dp"
+                            android:background="?android:attr/listDivider" />
+                    </TableRow>
+
+                    <fragment
+                        android:id="@+id/rent"
+                        android:name="com.example.allsmokeme.rentcart.RentCartFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        tools:layout="@layout/fragment_rent_cart">
+                    </fragment>
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_span="6">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="?android:attr/listDivider" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Spinner
+                            android:id="@+id/logistic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="5dp"
+                            android:background="?android:attr/listDivider" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableLayout>
+
+                            <TableRow
+                                android:id="@+id/samovivoz1"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@android:drawable/ic_dialog_map" />
+
+                                <TextView
+                                    android:id="@+id/samovivoz"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:text="123"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/logisticAddress1"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_logistic" />
+
+                                <TextView
+                                    android:id="@+id/logisticAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_weight="1"
+                                    android:maxLines="2"
+                                    android:text="123"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <View
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="1dp"
+                                    android:layout_marginHorizontal="0dp"
+                                    android:layout_span="2"
+                                    android:layout_weight="1"
+                                    android:background="?android:attr/listDivider" />
+                            </TableRow>
+
+                            <TableRow android:layout_marginHorizontal="5dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@android:drawable/ic_menu_recent_history" />
+
+                                <TextView
+                                    android:id="@+id/logisticTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_weight="1"
+                                    android:text="Ближайшее"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </TableRow>
+                        </TableLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="?android:attr/listDivider" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_weight="1"
+                            android:text="Комментарии к заказу:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/comments"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_weight="1"
+                            android:text="Комменты"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <Button
+                    android:id="@+id/buyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="@color/redText"
+                    android:onClick="onBuyClick"
+                    android:text="@string/buy" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

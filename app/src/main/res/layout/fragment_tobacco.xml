@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    card_view:cardBackgroundColor="@color/colorFont"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="3dp"
+    card_view:contentPadding="4dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/tobaccoCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="visible">
+
+<!--
+            <ImageView
+                android:id="@+id/tobaccoPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp" />
+-->
+
+            <TextView
+                android:id="@+id/tobaccoPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tobaccoName"
+                android:text="500 Р"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <RatingBar
+                android:id="@+id/tobaccoRatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tobaccoName"
+                android:layout_alignParentEnd="true"
+                android:numStars="10"
+                android:stepSize="0.1" />
+
+            <TextView
+                android:id="@+id/tobaccoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adalya BerryMix Лесный ягоды 50гр"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tobaccoAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tobaccoPrice"
+                android:text="В наличие" />
+
+            <TableLayout
+                android:id="@+id/tobaccoDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tobaccoAvailability"
+                android:layout_marginTop="10dp"
+                android:shrinkColumns="1">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Вкусы" />
+
+                    <TextView
+                        android:id="@+id/tobaccoСompositionValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Крепость" />
+
+                    <TextView
+                        android:id="@+id/tobaccoFortressValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Страна производитель" />
+
+                    <TextView
+                        android:id="@+id/tobaccoCountryValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="Содержание никотина" />
+
+                    <TextView
+                        android:id="@+id/tobaccoNicotineValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tobaccoDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tobaccoDesc"
+                android:layout_marginTop="10dp"
+                android:text="Описание" />
+
+            <TextView
+                android:id="@+id/tobaccoDescriptionValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tobaccoDescription"
+                android:text="" />
+
+            <Button
+                android:id="@+id/buttonRent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tobaccoDescriptionValue"
+                android:text="Выбрать" />
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>

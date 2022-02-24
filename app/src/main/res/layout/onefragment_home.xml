@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above ="@+id/layout_bottom_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/csvLoad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="загрузка каталога"
+                android:visibility="gone"/>
+
+            <fragment
+                android:id="@+id/rent"
+                android:name="com.example.allsmokeme.renthookah.HomeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_home" >
+                <requestFocus />
+            </fragment>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/mixRentFragment"
+                android:orientation="vertical">
+
+                <fragment
+                    android:id="@+id/rent2"
+                    android:name="com.example.allsmokeme.rentmix.MixRentFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_rent_mix" />
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/rent2"
+                    android:background="?android:attr/listDivider" />
+
+                <fragment
+                    android:id="@+id/rent1"
+                    android:name="com.example.allsmokeme.rentset.RentSetFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_set" />
+
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:hint="Комментарии к заказу"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/layout_bottom_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:visibility="invisible"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rentSum" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:text="@string/rentSumAll" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:minHeight="5dp"
+            android:onClick="rentCartOnClick"
+            android:text="Далее" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "840819810470",
+    "firebase_url": "https://allsmokeme.firebaseio.com",
+    "project_id": "allsmokeme",
+    "storage_bucket": "allsmokeme.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840819810470:android:61be8be1fe2d628ac71467",
+        "android_client_info": {
+          "package_name": "com.example.allsmokeme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840819810470-eu96btaqns114h07ba7tqsffcnnmojbu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.allsmokeme",
+            "certificate_hash": "e5382dac9307a50ad3bc91f18d8c6428dd63fe8b"
+          }
+        },
+        {
+          "client_id": "840819810470-fcg7q0tlp2cun6iseqgssj8qcatq7dsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMrXrHqp1SJxNev2HAeg4SpuRBV0oGLLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840819810470-fcg7q0tlp2cun6iseqgssj8qcatq7dsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

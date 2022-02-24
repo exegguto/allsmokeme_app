@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/addMixName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Микс №1" />
+
+        <TextView
+            android:id="@+id/mix1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/addMixName"
+            android:layout_toStartOf="@+id/price"
+            android:layout_alignParentStart="true"
+            android:text="@string/chooseTaste" />
+
+        <TextView
+            android:id="@+id/mix2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/mix1"
+            android:layout_toStartOf="@+id/price"
+            android:layout_alignParentStart="true"
+            android:text="@string/chooseTaste" />
+        <TextView
+            android:id="@+id/mix3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/price"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/mix2"
+            android:text="@string/chooseTaste" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="500р"
+            android:layout_centerVertical = "true"
+            android:layout_toStartOf = "@+id/del"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/del"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/button_cart_round_background_gradient"
+            android:text="X"
+            android:layout_alignParentEnd = "true"
+            android:layout_centerVertical = "true"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/switch1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/price"
+            android:layout_below="@id/mix3"
+            android:visibility="gone"
+            android:layout_alignParentStart="true"
+            android:text="@string/chooseTaste" />
+
+        <TextView
+            android:id="@+id/price1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="500р"
+            android:layout_toEndOf="@+id/switch1"
+            android:layout_alignBottom="@+id/switch1"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/del1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/button_cart_round_background_gradient"
+            android:text="X"
+            android:visibility="gone"
+            android:layout_alignParentEnd = "true"
+            android:layout_alignBottom="@+id/switch1"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="-10dp"
+            android:layout_below="@id/switch1"
+            android:background="?android:attr/listDivider" />
+
+    </RelativeLayout>
+</TableRow>
