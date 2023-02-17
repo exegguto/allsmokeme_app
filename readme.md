@@ -29,6 +29,5 @@
 ## Дизайн и функции
 [скачать apk файл](readme/allsmokeme.apk)
 
-<img src="readme/Screenshot_20230217_165116.png" width="200"/>
-<img src="readme/Screenshot_20230217_165220.png" width="200"/>
-<img src="readme/device-2023-02-17-161042.gif" width="200"/>
+<p align="center"><img src="readme/Screenshot_20230217_165116.png" width="200"/><img src="readme/Screenshot_20230217_165220.png" width="200"/></p>
+<img src="./readme/device-2023-02-17-161042.gif" width="200"/>
