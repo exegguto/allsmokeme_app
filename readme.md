@@ -27,7 +27,8 @@
 - Firebase Storage
 
 ## Дизайн и функции
-![Альт-текст](readme/Screenshot_20230217_165116.png)
-![Альт-текст](readme/Screenshot_20230217_165220.png)
-![Альт-текст](readme/device-2023-02-17-161042.gif)
 [скачать apk файл](readme/allsmokeme.apk)
+
+<img src="readme/Screenshot_20230217_165116.png" width="200"/>
+<img src="readme/Screenshot_20230217_165220.png" width="200"/>
+<img src="readme/device-2023-02-17-161042.gif" width="200"/>
