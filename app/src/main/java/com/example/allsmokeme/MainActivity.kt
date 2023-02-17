@@ -1,5 +1,6 @@
 package com.example.allsmokeme
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -9,6 +10,7 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -26,6 +28,8 @@ import com.example.allsmokeme.rentmix.SettingModel
 import com.example.allsmokeme.rentset.RentSetEndModel
 import com.example.allsmokeme.user.UserActivity
 import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
+import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -154,21 +158,60 @@ open class MainActivity : AppCompatActivity(), OnHomeFragmentDataListener {
         snack.show()
     }
 
+
+    private val signInLauncher =
+        registerForActivityResult(FirebaseAuthUIActivityResultContract()) {
+                result -> onSignInResult(result)
+        }
+
+    open fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
+        val response = result.idpResponse
+        if (result.resultCode == RESULT_OK) {
+            // Successfully signed in
+            val user = FirebaseAuth.getInstance().currentUser
+            val docRef = db.collection("users").document(user!!.uid)
+            docRef.get()
+                .addOnSuccessListener { document ->
+                    if (!document.exists()) {
+                        val userNew: MutableMap<String, String?> = HashMap()
+                        userNew["userName"] = user.displayName
+                        userNew["userPhone"] = user.phoneNumber
+
+                        db.collection("users").document(user.uid).set(userNew)
+                    } else {
+
+                    }
+                }
+                .addOnFailureListener { exception ->
+                }
+
+            Toast.makeText(
+                this,
+                "Successfully signed in. Welcome!",
+                Toast.LENGTH_LONG
+            ).show()
+
+            oneStep()
+        } else {
+            Toast.makeText(
+                this,
+                "We couldn't sign you in. Please try again later.",
+                Toast.LENGTH_LONG
+            ).show()
+            // Close the app
+            finish()
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         if(FirebaseAuth.getInstance().currentUser == null) {
             // Start sign in/sign up activity
-            startActivityForResult(
-                AuthUI.getInstance()
+            signInLauncher.launch(AuthUI.getInstance()
                     .createSignInIntentBuilder()
-                    .setAvailableProviders(
-                        listOf(
-                            AuthUI.IdpConfig.PhoneBuilder().build()
-                        )
-                    )
-                    .build(),
-                SIGN_IN_REQUEST_CODE
+                    .setAvailableProviders(listOf(AuthUI.IdpConfig.PhoneBuilder().build()))
+                    .build()
+//                SIGN_IN_REQUEST_CODE
             )
         } else {
             oneStep()
@@ -265,7 +308,7 @@ open class MainActivity : AppCompatActivity(), OnHomeFragmentDataListener {
             override fun onPageScrollStateChanged(state: Int) {}
         })
 
-        edittext1 = findViewById(R.id.editText1)//
+//        edittext1 = findViewById(R.id.editText1) //
 
     }
 
@@ -291,7 +334,7 @@ open class MainActivity : AppCompatActivity(), OnHomeFragmentDataListener {
     fun addVkusOnClick(view: View?) {
         holder = view?.tag as Int //на какую строчку нажали
         startActivityForResult(Intent(this, MixActivity::class.java), 1)
-    }// Запускаем Активити с выбором микса
+    } // Запускаем Активити с выбором микса
 
     fun rentCartOnClick(view: View?) {
         if(rentOrder.hookah == null) {
@@ -378,50 +421,50 @@ open class MainActivity : AppCompatActivity(), OnHomeFragmentDataListener {
         reCalcRentOrderMix()
     }//получаем из фрагмента массив
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == SIGN_IN_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                val user = FirebaseAuth.getInstance().currentUser
-                val docRef = db.collection("users").document(user!!.uid)
-                docRef.get()
-                    .addOnSuccessListener { document ->
-                        if (!document.exists()) {
-                            val userNew: MutableMap<String, String?> = HashMap()
-                            userNew["userName"] = user.displayName
-                            userNew["userPhone"] = user.phoneNumber
-
-                            db.collection("users").document(user.uid).set(userNew)
-                        } else {
-
-                        }
-                    }
-                    .addOnFailureListener { exception ->
-                    }
-
-                Toast.makeText(
-                    this,
-                    "Successfully signed in. Welcome!",
-                    Toast.LENGTH_LONG
-                )
-                    .show()
-
-                oneStep()
+    private val getResult =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()) {
+            if(it.resultCode == Activity.RESULT_OK){
+//                val user = FirebaseAuth.getInstance().currentUser
+//                val docRef = db.collection("users").document(user!!.uid)
+//                docRef.get()
+//                    .addOnSuccessListener { document ->
+//                        if (!document.exists()) {
+//                            val userNew: MutableMap<String, String?> = HashMap()
+//                            userNew["userName"] = user.displayName
+//                            userNew["userPhone"] = user.phoneNumber
+//
+//                            db.collection("users").document(user.uid).set(userNew)
+//                        } else {
+//
+//                        }
+//                    }
+//                    .addOnFailureListener { exception ->
+//                    }
+//
+//                Toast.makeText(
+//                    this,
+//                    "Successfully signed in. Welcome!",
+//                    Toast.LENGTH_LONG
+//                )
+//                    .show()
+//
+//                oneStep()
             } else {
-                Toast.makeText(
-                    this,
-                    "We couldn't sign you in. Please try again later.",
-                    Toast.LENGTH_LONG
-                )
-                    .show()
-                // Close the app
-                finish()
+//                Toast.makeText(
+//                    this,
+//                    "We couldn't sign you in. Please try again later.",
+//                    Toast.LENGTH_LONG
+//                )
+//                    .show()
+//                // Close the app
+//                finish()
             }
-        }
-        if (requestCode == 1) {
+
+        if (it.resultCode == 1) {
             val listTemp1 = listMix?.get(holder)
-            val mixTemp = data?.getStringExtra("mixResult")
-            val priseMixTemp = data?.getIntExtra("priseMix", 0)
+            val mixTemp = it.data?.getStringExtra("mixResult")
+            val priseMixTemp = it.data?.getIntExtra("priseMix", 0)
 
             if (listTemp1?.mix1 == getString(R.string.chooseTaste)) {
                 listTemp1.mix1 = mixTemp!!
